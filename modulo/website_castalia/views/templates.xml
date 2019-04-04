@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <template id="index" name="index">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Shop - Add credit notes</t>
+            <t t-set="no_footer">1</t>
+
+            <div id="wrap">
+                <div class="container oe_website_sale">
+                    <div class="row">                     
+                        <div class="col-md-8 col-md-offset-2 oe_cart">
+                          <div class='row'>
+                            <t t-call="website_sale.wizard_checkout">
+                                <t t-set="step" t-value="100" />
+                            </t>
+                         </div>
+                         <div class="row">
+                            <div class='col-md-12 o_website_sale_rightfit'>
+                                <h2 class="mb8 mt8">Add credit notes</h2>				  
+					              <table class="table-striped table">
+					              	<thead>
+					              		<tr>
+					              			<th>Note numbre</th>
+					              			<th>Parent</th>
+					              			<th>Amount</th>
+					              			
+					              		</tr>
+					              	</thead>
+						            <tbody>
+						            	<tr t-foreach="nota" t-as="note">
+						            		<td><span t-esc="note.number"/></td>
+						            		<td><span t-esc="note.partner_id.name"/></td>
+						            		<td><span t-esc="note.amount_total"/></td>
+						            	</tr>
+						            </tbody>
+					              </table>
+                            </div>
+                            <div class="clearfix" />
+                            <div class="oe_structure" />
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure" />
+            </div>
+        </t>
+    </template>
+    </data>
+</odoo>

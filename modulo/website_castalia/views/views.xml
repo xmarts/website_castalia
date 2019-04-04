@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="note_credit" name="NoteCredit" inherit_id="website_sale.payment" customize_show="True">
+  	<xpath expr="//div[@id='payment_method']" position="after">
+  		<a t-attf-href="/shop/notas" class="btn btn-primary">Agregar nota de credito</a>
+  	</xpath>
+  </template>
+
+  <template id="state_notes" name="Statusnotes" inherit_id="website_sale.wizard_checkout" customize_show="True">
+  	<xpath expr="//li[@id='step40']" position="after">
+  		<li t-att-class="(step==100 and 'text-primary') or 'text-muted'" id="step100">
+          Notas de credito<span class="chevron"/>
+      </li>
+  	</xpath>
+  </template>
+
+</odoo>
